@@ -15,6 +15,6 @@ if [ ! -d ./bin ]; then
    echo Created bin/
 fi
 
-pushd bin/
+pushd bin/ > /dev/null # Piping into /dev/null to silence output
 $cc $cflags -c $source_files
-popd
+popd > /dev/null
