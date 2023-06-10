@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+source_files= # Space is here
+for file in $(find src/ -type f)
+do
+    source_files="$source_files $file"
+done
+
+
