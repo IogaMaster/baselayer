@@ -1,9 +1,20 @@
 #!/usr/bin/env bash
 
-source_files= # Space is here
-for file in $(find src/ -type f)
+cc=clang
+cflags=-Wall
+
+echo Gathering source files...
+source_files=
+for file in $(find $(pwd)/src/ -type f)
 do
     source_files="$source_files $file"
 done
 
+if [ ! -d ./bin ]; then
+   mkdir bin
+   echo Created bin/
+fi
 
+pushd bin/
+$cc $cflags -c $source_files
+popd
