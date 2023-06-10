@@ -18,3 +18,4 @@ fi
 pushd bin/ > /dev/null # Piping into /dev/null to silence output
 $cc $cflags -c $source_files
 popd > /dev/null
+echo Build finished!
